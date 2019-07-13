@@ -1,0 +1,7 @@
+<%= form_with model: @todo, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :description, "Descripcion" %>
+    <%= f.text_field :description, class:'form-control' %>
+  </div>
+  <%= f.submit "Guardar", class:'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,26 @@
+<h1>Listado</h1>
+<%= link_to 'Volver', todos_path, class:'btn btn-primary' %>
+<div class="row">
+  <div class="col-6">
+    <h3>No Completados</h3>
+
+    <% @todos.each do |todo| %>
+      <% if todo.completed != true %>
+        <div>
+          <%= todo.description %>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div class="col-6">
+    <h3>Completados</h3>
+    <% @todos.each do |todo| %>
+      <% if todo.completed == true %>
+        <div>
+          <%= todo.description %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

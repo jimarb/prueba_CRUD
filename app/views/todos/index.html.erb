@@ -1,0 +1,24 @@
+<!-- <div class="container">
+  <%= link_to 'Crear ToDo', todos_new_path, class:'btn btn-primary' %>
+  <%= link_to 'Ver Listado', todos_list_path, class:'btn btn-primary' %>
+</div> -->
+
+<br>
+<% @todos.each do |todo| %>
+  <div class="card card-body bg-light">
+     <p><%= todo.description %></p>
+     <div class="container">
+       <%= link_to 'Ver', todo, class:'btn btn-outline-primary' %>
+       <%= link_to 'Editar', todo_edit_path(todo), class:'btn btn-outline-dark' %>
+       <%= link_to 'Eliminar', todo, method: :delete, class:'btn btn-outline-danger' %>
+       <% if todo.completed == true %>
+         <label class="btn btn-success">Tarea Completada</label>
+       <% else %>
+           <%= link_to 'Hecho', todo_completed_path(todo), class:'btn btn-outline-success' %>
+       <% end %>
+
+     </div>
+
+
+  </div>
+<% end %>

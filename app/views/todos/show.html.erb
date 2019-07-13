@@ -1,0 +1,14 @@
+<%= link_to 'Volver', todos_path, class:'btn btn-primary' %>
+
+
+<h1>Tarea: <%= @todo.description %></h1>
+<br>
+<div class="">
+  Completado
+  <br>
+  <% if @todo.completed == true %>
+    <label class="btn btn-success">Tarea Completada</label>
+  <% else %>
+      <label class="btn btn-danger">No Completada</label>
+  <% end %>
+</div>
